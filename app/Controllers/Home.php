@@ -6,20 +6,36 @@ class Home extends BaseController
 {
     public function index()
     {
-	    echo view('layout/header');
-	    echo view('pages/home');
-	    echo view('layout/footer');
+        $data = [
+            'title' => 'Home web Juhdin'
+        ];
+        return view('pages/home', $data);
     }
     public function about()
     {
-	    echo view('layout/header');
-	    echo view('pages/about');
-	    echo view('layout/footer');
+        $data = [
+            'title' => 'About'
+        ];
+        return view('pages/about', $data);
     }
     public function contact()
     {
-	    echo view('layout/header');
-	    echo view('pages/contact');
-	    echo view('layout/footer');
+        $data = [
+            'title' => 'Contact',
+            'alamat' => [
+                [
+                    'tipe' => 'Rumah',
+                    'alamat' => 'Jl. Cedana Gang 4 No.32',
+                    'kota' => 'Samarinda'
+                ],
+                [
+                    'tipe' => 'Kantor',
+                    'alamat' => 'Jl. Untung Suropati No.08',
+                    'kota' => 'Samarinda'
+                ]
+            ]
+        ];
+
+        return view('pages/contact', $data);
     }
 }
